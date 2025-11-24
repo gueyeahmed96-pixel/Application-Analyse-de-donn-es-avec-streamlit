@@ -116,3 +116,15 @@ def _create_active_filters_indicator(df):
     st.sidebar.markdown(f"- **Années:** {len(st.session_state.selected_years)}/{len(df['Année'].unique())}")
     st.sidebar.markdown(f"- **Pays:** {len(st.session_state.selected_countries)}/{len(df['Pays'].unique())}")
     st.sidebar.markdown(f"- **Gammes:** {len(st.session_state.selected_productlines)}/{len(df['Gamme_de_Produits'].unique())}")
+    
+    # Section de contact
+    _create_contact_section()
+
+def _create_contact_section():
+    """Crée la section de contact du développeur"""
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("**👤 Développeur:**")
+    st.sidebar.markdown("**Mamadou Lamine Gueye**")
+    st.sidebar.markdown("📧 [mlamine.gueye1@univ-thies.sn](mailto:mlamine.gueye1@univ-thies.sn)")
+    st.sidebar.markdown("💼 [LinkedIn](https://www.linkedin.com/in/mamadou-lamine-gueye-879103360)")
+    st.sidebar.markdown("---")
