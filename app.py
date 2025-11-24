@@ -51,19 +51,9 @@ def main():
 
 def _render_main_header():
     """Affiche l'en-tête principal"""
-    st.markdown("""
-    <div style="text-align: center; padding: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; margin: 25px 0; border: 2px solid #E0E0E0;">
-        <h1 style="color: white; font-size: 3.5em; margin-bottom: 15px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-            📊 TABLEAU DE BORD ANALYTIQUE
-        </h1>
-        <p style="color: white; font-size: 1.8em; opacity: 0.95; font-weight: 300; margin-bottom: 10px;">
-            Performances & Insights Commerciaux
-        </p>
-        <p style="color: #E0E0E0; font-size: 1.1em; opacity: 0.8;">
-            Analyse stratégique des données de vente 2003-2005
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.title("📊 TABLEAU DE BORD ANALYTIQUE")
+    st.subheader("Performances & Insights Commerciaux")
+    st.caption("Analyse stratégique des données de vente 2003-2005")
 
 def _render_tabs(df_filtered, df_original):
     """Affiche tous les onglets de l'application"""
