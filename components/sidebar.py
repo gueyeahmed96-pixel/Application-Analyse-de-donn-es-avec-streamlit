@@ -1,6 +1,21 @@
 import streamlit as st
 import pandas as pd
 
+def _create_theme_selector():
+    """Crée le sélecteur de thème"""
+    st.sidebar.subheader("🎨 Thème")
+    theme = st.sidebar.radio(
+        "Choisir le thème:",
+        options=["☀️ Clair", "🌙 Sombre"],
+        key="theme_selector",
+        horizontal=True
+    )
+    
+    if theme == "🌙 Sombre":
+        st.session_state.theme = "dark"
+    else:
+        st.session_state.theme = "light"
+
 def _update_filter(filter_name, filter_value):
     """Met à jour le filtre dans la session_state"""
     st.session_state[filter_name] = filter_value
@@ -15,6 +30,11 @@ def create_sidebar(df):
     st.sidebar.markdown(f"- **Période:** {df['Année'].min()} - {df['Année'].max()}")
     st.sidebar.markdown(f"- **Pays:** {len(df['Pays'].unique())}")
     st.sidebar.markdown(f"- **Gammes:** {len(df['Gamme_de_Produits'].unique())}")
+    st.sidebar.markdown("---")
+    
+    # Sélecteur de thème
+    _create_theme_selector()
+    
     st.sidebar.markdown("---")
     
     # Filtres
